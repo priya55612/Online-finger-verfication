@@ -3,6 +3,8 @@ import cv2
 import numpy as np
 import orientation_estimation as oe
 import normalization as segmentation
+import ridge_orientation as rio
+
 w = 3
 
 def main():
@@ -17,6 +19,12 @@ def main():
     # cv2.waitKey(0)
     print(mask.shape)
     cv2.imshow("mask", (mask.astype(int)*255.0))
+    # cv2.waitKey(0)
+
+    ridge_orientation_img = rio.ridge_orientation(segmentedImage, 1, 7, None)
+    print(np.max(ridge_orientation_img))
+    print(np.min(ridge_orientation_img))
+    # cv2.imshow("ridge_orientation_img", ridge_orientation_img)
     cv2.waitKey(0)
     #print(input_im.shape)
 
