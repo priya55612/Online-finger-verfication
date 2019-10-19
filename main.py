@@ -4,7 +4,9 @@ import numpy as np
 import orientation_estimation as oe
 import normalization as segmentation
 import ridge_orientation as rio
+import ridge_frequency as rf
 
+from ridge_filter import ridge_filter
 w = 3
 
 def main():
@@ -22,6 +24,16 @@ def main():
     ridge_orientation_img = rio.ridge_orientation(segmentedImage, 1.2, 7, 7)
     print(np.min(ridge_orientation_img))
     # cv2.imshow("ridge_orientation_img", ridge_orientation_img)
+
+
+    freq, mean_freq = rf.ridge_frequency(segmentedImage, mask, ridge_orientation_img, 38, 5, 5, 15 )
+    cv2.imshow("freq", freq)
+
+    freq = mean_freq * mask
+
+    new_img = ridge_filter(segmentedImage, ridge_orientation_img, freq, 0.65, 0.65 )
+
+    cv2.imshow("new_img", new_img)
     cv2.waitKey(0)
     #print(input_im.shape)
 
