@@ -3,14 +3,13 @@ import numpy as np
 from scipy import ndimage
 from scipy import signal
 
-def ridge_orientation(img, grad_sigma, window_size, orient_smooth_sigma):
+def ridge_orientation(img, grad_sigma, orient_smooth_sigma):
     # Get size of gaussian filter for blurring. Discrete gaussian is calculated by convolving gaussian function
     # in a window equals to 6 times sigma. Value outside this window can be neglected as they are very small.
     size = np.fix(6*grad_sigma)
     if np.remainder(size,2) == 0:
         size = size+1
     gaussian = cv2.getGaussianKernel(np.int(size),grad_sigma)
-    print("gaussian",gaussian)
     F = gaussian*gaussian.T
     F_y, F_x = np.gradient(F)
     s_x = signal.convolve2d(img, F_x, mode="same")
