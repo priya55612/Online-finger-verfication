@@ -2,7 +2,7 @@ import numpy as np
 from ridge import Ridge
 from ridge_orientation import ridge_orientation
 
-def find_minutiae(img):
+def find_minutiae(enhanced_image, img):
     """
     This function find minutia in skeleton image. minutia is detected as follows.
     1. If a pixel has exactly one foreground neighbor, its a ridge ending
@@ -18,7 +18,7 @@ def find_minutiae(img):
 
     size_x, size_y = img.shape
 
-    orientation_image = ridge_orientation(img, 1, None)
+    orientation_image = ridge_orientation(enhanced_image, 0.5, None)
 
     for i in range(1, size_x - 1):
         for j in range(1, size_y - 1):
