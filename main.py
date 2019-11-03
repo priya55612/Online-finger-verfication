@@ -3,16 +3,19 @@ import cv2
 import image_enhancement
 import input_image
 import minutiae_util
+import sift
 import numpy as np
 w = 3
 
 
 def addDirection(decorated_img, angle, x, y):
     arrow_length = 15
-    direction_x, direction_y = (arrow_length * -1* np.cos(angle), arrow_length * np.sin(angle))  # calculate direction
+    direction_x, direction_y = (arrow_length * np.cos(angle), arrow_length * -1 *np.sin(angle))  # calculate direction
     tipLength = 0.3
     start_point = (y, x)
     end_point = ( int(y + direction_y), int(x + direction_x))
+    print(start_point, end_point, angle)
+
     # draw arrow
     return cv2.arrowedLine(decorated_img, start_point,end_point, (255, 0, 0), thickness=1, tipLength=tipLength)
 
@@ -38,6 +41,7 @@ def main():
     for i in range(len(ridge_endings)):
         x, y = ridge_endings[i].x, ridge_endings[i].y
         decorated_img[x][y] = (0,0,255)
+        sift.sift(decorated_img, ridge_endings, ridge_bifurcations, ridge_2s)
         decorated_img = addDirection(decorated_img, ridge_endings[i].orientation, x, y)
         # angles.append(ridge_endings[i].orientation)
     cv2.imshow("decorated image pts", decorated_img)

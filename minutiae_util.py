@@ -18,7 +18,7 @@ def find_minutiae(enhanced_image, img):
 
     size_x, size_y = img.shape
 
-    orientation_image = ridge_orientation(enhanced_image, 0.5, None)
+    orientation_image = ridge_orientation(img, 1.5, None)
 
     for i in range(1, size_x - 1):
         for j in range(1, size_y - 1):
