@@ -4,7 +4,6 @@ import image_enhancement
 import input_image
 import minutiae_util
 import numpy as np
-w = 3
 
 
 def addDirection(decorated_img, angle, x, y):

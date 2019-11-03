@@ -1,6 +1,9 @@
 import numpy as np
 from ridge import Ridge
 from ridge_orientation import ridge_orientation
+import cv2
+from matplotlib import pyplot as plt
+
 
 def find_minutiae(enhanced_image, img):
     """
@@ -18,7 +21,8 @@ def find_minutiae(enhanced_image, img):
 
     size_x, size_y = img.shape
 
-    orientation_image = ridge_orientation(enhanced_image, 0.5, None)
+    orientation_image = ridge_orientation(img, 1, 5) - np.pi/2
+    # cv2.imshow("orientation image", (orientation_image*255/np.pi).astype('uint8'))
 
     for i in range(1, size_x - 1):
         for j in range(1, size_y - 1):
