@@ -3,6 +3,7 @@ from ridge_orientation import ridge_orientation
 from ridge_frequency import ridge_frequency
 from ridge_filter import ridge_filter
 from skimage import morphology
+import numpy as np
 import cv2
 
 
@@ -43,3 +44,27 @@ def img_skeleton(img):
     return skeleton_image
 
 
+def remove_noise(img):
+    input_img = np.array(img.astype('int')*1.0)
+    output_img = np.array(img.astype('int')*1.0)
+
+    W,H = input_img.shape[:2]
+    filtersizes = [4,20]
+    for filtersize in filtersizes:
+        for i in range(W - filtersize):
+            for j in range(H - filtersize):
+                filter0 = output_img[i:i + filtersize,j:j + filtersize]
+
+                flag = 0
+                if sum(filter0[:,0]) == 0:
+                    flag +=1
+                if sum(filter0[:,filtersize - 1]) == 0:
+                    flag +=1
+                if sum(filter0[0,:]) == 0:
+                    flag +=1
+                if sum(filter0[filtersize - 1,:]) == 0:
+                    flag +=1
+                if flag > 3:
+                    output_img[i:i + filtersize, j:j + filtersize] = np.zeros((filtersize, filtersize))
+
+    return output_img
