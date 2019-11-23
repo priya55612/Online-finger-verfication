@@ -24,10 +24,11 @@ def ridge_orientation(img, grad_sigma, orient_smooth_sigma):
 
     denominator = np.sqrt(np.power(s_xy,2)+np.power((s_xx-s_yy),2)) + np.finfo(float).eps
 
-    #Analytic solution of principal direction
+    # Analytic solution of principal direction
     sin_2_theta = s_xy/denominator
     cos_2_theta = (s_xx-s_yy)/denominator
 
+    # Obtains orientation by appying gaussian kernel 2nd time. This eliminates effect of noise
     if orient_smooth_sigma:
         size = np.fix(6*orient_smooth_sigma)
         if np.remainder(size,2) == 0:

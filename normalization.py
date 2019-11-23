@@ -3,18 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def mean(img):
-    mean = np.mean(img)
-    return mean
-
-def std(img):
-    std = np.std(img)
-    return std
-
 def normalize(img):
-    norm_img = (img-mean(img))/std(img)
+    norm_img = (img-np.mean(img))/np.std(img)
     return norm_img
 
+# Below function returns the masked image with the given threshold and normalized image
 def ridge_segementation(image, window_size, threshold):
     rows, cols = image.shape
     image = normalize(image)
