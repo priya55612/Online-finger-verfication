@@ -1,4 +1,5 @@
 import numpy as np
+''' Class to represent Minutiae point'''
 class Ridge:
     # x coordinate of Ridge
     x = None
