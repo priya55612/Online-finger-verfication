@@ -66,6 +66,7 @@ remove_noise() - Removes the outlier noise around the skeletonized image
 
 The above .py files help in plotting the orientations of the minutiae points in the fingerprint image
 
+![Orientations of the minutiae points](Images/Orientations_of_the_minutiae.png)
 
 
 ### References
