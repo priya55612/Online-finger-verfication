@@ -11,7 +11,7 @@ At a high level, this paper uses various image processing techniques like Gaussi
    - For image enhancement and thinning, we implemented the algorithm proposed in [2].
    - For minutiae detection, we used algorithm proposed in [1]
 2. For matching we used Brute force matcher on descriptors obtained at each minutiae.
-###Running the code, Input/Output structure
+### Running the code, Input/Output structure
 *main.py* is the entry point for the code. This file takes input path for two images and outputs fingerprint matched or not.
 *test_input* directory contains test images.
 *Images* directory contains images for the document.

@@ -13,7 +13,7 @@ import cv2
 def enhance_image(img):
     window_size = 16
     threshold = 0.1
-    # Gnerate fingerpringt mask from given image
+    # Generate fingerprint mask from given image
     norm_img, mask = ridge_segementation(img, window_size, threshold)
     cv2.imshow("normal image", norm_img)
 
@@ -29,7 +29,7 @@ def enhance_image(img):
     max_wave_length = 15
     freq, mean_freq = ridge_frequency(norm_img, mask, oriented_img, block_size, window_size, min_wave_length,
                                       max_wave_length)
-    # cv2.imshow("freauency image", freq)
+    # cv2.imshow("frequency image", freq)
 
     freq = mean_freq * mask
     k_x = 0.65
