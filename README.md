@@ -58,9 +58,15 @@ skeletonize() - Uses morphological operation skeletonization on the enhanced ima
 
 ![Skeletonized Image](Images/skeleton_image.png)
 
-remove_noise - Removes the outlier noise around the skeletonized image
+remove_noise() - Removes the outlier noise around the skeletonized image
 
 ![Skeletonized Image without noise](Images/skeletion_image_without_noise.png)
+
+**ridge.py, plot_util.py and minutiae_util.py** 
+
+The above .py files help in plotting the orientations of the minutiae points in the fingerprint image
+
+
 
 ### References
 [1] [On-Line Fingerprint Verification](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=587996)   
