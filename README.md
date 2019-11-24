@@ -32,6 +32,16 @@ ridge_segmentation() - returns the  segmented ridge region image
 
 ![Masked image](Images/masked_image.png)
 
+**ridge_orientation.py**
+
+ridge_orientation() - Estimates the local orientation of ridges in a fingerprint
+
+![Oriented Image](Images/oriented_image.png)
+
+**ridge_frequency.py**
+
+ridge_frequency() - Function to estimate the fingerprint ridge frequency across a fingerprint image
+
 
 ### References
 [1] [On-Line Fingerprint Verification](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=587996)   
