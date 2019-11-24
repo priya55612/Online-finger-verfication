@@ -28,7 +28,7 @@ norm() -  returns the normalized image
 
 ![Normalized Image](Images/norm_image.png)
 
-ridge_segmentation() - returns the  segmented ridge region image
+ridge_segmentation() - Returns the  segmented ridge region image
 
 ![Masked image](Images/masked_image.png)
 
