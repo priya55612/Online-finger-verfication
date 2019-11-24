@@ -3,7 +3,7 @@ import numpy as np
 import image_enhancement
 import minutiae_util
 
-
+# Finds ridge ending and bifurcations. Following this, ORB descriptors are created for minutiae points
 def get_descriptors(skeleton):
     ridge_endings, ridge_bifurcations, ridge_2s = minutiae_util.find_minutiae(skeleton)
     # Extract keypoints
