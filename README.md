@@ -42,6 +42,7 @@ ridge_orientation() - Estimates the local orientation of ridges in a fingerprint
 
 ridge_frequency() - Function to estimate the fingerprint ridge frequency across a fingerprint image
 
+![Frequency Image](Images/freq_image.png)
 
 ### References
 [1] [On-Line Fingerprint Verification](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=587996)   
