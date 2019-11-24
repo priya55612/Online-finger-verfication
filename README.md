@@ -59,6 +59,50 @@ skeletonize() - Uses morphological operation skeletonization on the enhanced ima
 
 ![Skeletonized Image](Images/skeleton_image.png)
 
+remove_noise - Removes the outlier noise around the skeletonized image
+
+![Skeletonized Image without noise](Images/skeletion_image_without_noise.png)
+
+Given the test image:
+
+![Test Fingerprint image](Images/test_image.png)
+
+**normalization.py**: 
+
+norm() -  returns the normalized image
+
+![Normalized Image](Images/norm_image.png)
+
+ridge_segmentation() - Returns the  segmented ridge region image
+
+![Masked image](Images/masked_image.png)
+
+**ridge_orientation.py**
+
+ridge_orientation() - Estimates the local orientation of ridges in a fingerprint
+
+![Oriented Image](Images/oriented_image.png)
+
+**ridge_frequency.py**
+
+ridge_frequency() - Estimates the fingerprint ridge frequency across a fingerprint image
+
+![Frequency Image](Images/freq_image.png)
+
+**ridge_filter.py** 
+
+ridge_filter - Enhances fingerprint image via oriented filters
+
+**image_enhancement.py**
+
+enhance_image() - Uses above functions to enhance the fingerprint image
+
+![Enhanced Image](Images/enhanced_image.png)
+
+skeletonize() - Uses morphological operation skeletonization on the enhanced image
+
+![Skeletonized Image](Images/skeleton_image.png)
+
 remove_noise() - Removes the outlier noise around the skeletonized image
 
 ![Skeletonized Image without noise](Images/skeletion_image_without_noise.png)
