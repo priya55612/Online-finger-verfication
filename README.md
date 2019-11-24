@@ -60,7 +60,7 @@ skeletonize() - Uses morphological operation skeletonization on the enhanced ima
 
 remove_noise - Removes the outlier noise around the skeletonized image
 
-![Skeletonized Image without noise](Images/skeleton_image_without_noise.png)
+![Skeletonized Image without noise](Images/skeletion_image_without_noise.png)
 
 ### References
 [1] [On-Line Fingerprint Verification](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=587996)   
