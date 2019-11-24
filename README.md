@@ -15,7 +15,32 @@ At a high level, this paper uses various image processing techniques like Gaussi
 *main.py* is the entry point for the code. This file takes input path for two images and outputs fingerprint matched or not.
 *test_input* directory contains test images.
 *Images* directory contains images for the document.
-### Result
+
+### Intermediate results for the Image Enhancement
+
+Given the test image:
+
+![Test Fingerprint image](Images/test_image.png)
+
+**normalization.py**: 
+
+norm() -  returns the normalized image
+
+![Normalized Image](Images/norm_image.png)
+
+ridge_segmentation() - returns the  segmented ridge region image
+
+![Masked image](Images/masked_image.png)
+
+**ridge_orientation.py**
+
+ridge_orientation() - Estimates the local orientation of ridges in a fingerprint
+
+![Oriented Image](Images/oriented_image.png)
+
+**ridge_frequency.py**
+
+ridge_frequency() - Function to estimate the fingerprint ridge frequency across a fingerprint image
 
 
 ### References
